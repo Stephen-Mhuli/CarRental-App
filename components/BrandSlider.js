@@ -4,15 +4,15 @@ import { StyleSheet, View, Text, FlatList, Image } from 'react-native';
 function BrandSlider(props) {
 
     const [Images ,setImages] = useState([
-        { src: require('../assets/BrandsLogo/tesla4.jpg'), id: 1 },
-        { src: require('../assets/BrandsLogo/audi.png'), id: 2},
+        { src: require('../assets/BrandsLogo/bmw.png'), id: 1 },
+        { src: require('../assets/BrandsLogo/auditp.png'), id: 2},
         { src: require('../assets/BrandsLogo/toyota.png'), id: 3},
-        { src: require('../assets/BrandsLogo/subaru2.png'), id: 4},
+        { src: require('../assets/BrandsLogo/subarutp.png'), id: 4},
         { src: require('../assets/BrandsLogo/mercedes.png'),id: 5},
-        { src: require('../assets/BrandsLogo/bentley.png'),id: 6},
-        { src: require('../assets/BrandsLogo/maserati.jpg'), id: 7},
-        { src: require('../assets/BrandsLogo/lamborghini.png'), id: 8},
-        { src: require('../assets/BrandsLogo/jaguar.jpg'), id: 9},
+        { src: require('../assets/BrandsLogo/teslatp.png'),id: 6},
+        { src: require('../assets/BrandsLogo/maseratp.png'), id: 7},
+        { src: require('../assets/BrandsLogo/nissan.png'), id: 8},
+        { src: require('../assets/BrandsLogo/jaguartp.png'), id: 9},
     ]);
 
     return (
@@ -24,12 +24,15 @@ function BrandSlider(props) {
                horizontal={true} 
                showsHorizontalScrollIndicator={false} 
                data={Images}
-               //keyExtractor={(item) => item.id}
-               renderItem={ ({ item, index }) => (
-               <Image 
-               source={item.src}    
-               style={styles.imagesLogo}
-               />
+               keyExtractor={(item) => item.id}
+               renderItem={ ({ item }) => (
+                <View style={styles.brandStyle}>
+                    <Image 
+                     source={item.src}    
+                     style={styles.imagesLogo}
+                    />
+                </View>
+               
              )}
            />
         </View>
@@ -47,19 +50,24 @@ const styles = StyleSheet.create({
     },
 
     imagesLogo: {
-        width:120,
-        height:120,
-        //borderWidth:1,
-        //borderColor:'grey',
+        width:100,
+        height:100,
         resizeMode:'contain',
-        margin:8
+        margin:4
     },
 
     brandText: {
-        color: 'grey',
+        color: 'black',
         fontWeight: 'bold',
-        fontSize: 20,
-        padding: 5,
-        marginLeft: 5,
+        fontSize: 22,
+        padding: 8,
+        marginLeft: 10,
+        //backgroundColor: 'blue'
+    },
+    brandStyle: {
+        borderRadius: 20,
+        //backgroundColor: 'lightgrey',
+        paddingLeft: 1,
+        paddingRight: 1,
     }
 })

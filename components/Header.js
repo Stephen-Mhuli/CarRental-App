@@ -37,12 +37,12 @@ const styles = StyleSheet.create({
         fontSize: 22,
         padding: 5,
         marginLeft: 10,
-        color: 'grey'
+        color: 'black'
         //fontWeight: 'bold'
         
     },
     text: {
-        color: 'grey',
+        color: 'black',
         fontWeight: 'bold',
         fontSize: 25,
     }
