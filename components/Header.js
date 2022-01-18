@@ -34,9 +34,9 @@ const styles = StyleSheet.create({
 
     },   
     headerChooseText: {
-        fontSize: 22,
+        fontSize: 18,
         padding: 5,
-        marginLeft: 10,
+        marginLeft: 15,
         color: 'black'
         //fontWeight: 'bold'
         
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     text: {
         color: 'black',
         fontWeight: 'bold',
-        fontSize: 25,
+        fontSize: 21,
     }
 
 

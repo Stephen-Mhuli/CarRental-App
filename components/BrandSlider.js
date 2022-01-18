@@ -1,5 +1,5 @@
 import React, { useState }from 'react';
-import { StyleSheet, View, Text, FlatList, Image } from 'react-native';
+import { StyleSheet, View, Text, FlatList, Image, TouchableOpacity, TouchableHighlight } from 'react-native';
 
 function BrandSlider(props) {
 
@@ -15,6 +15,10 @@ function BrandSlider(props) {
         { src: require('../assets/BrandsLogo/jaguartp.png'), id: 9},
     ]);
 
+    const handleClick = () =>{
+
+    }
+
     return (
         <View style={styles.brand}>
             <View>
@@ -26,12 +30,15 @@ function BrandSlider(props) {
                data={Images}
                keyExtractor={(item) => item.id}
                renderItem={ ({ item }) => (
-                <View style={styles.brandStyle}>
-                    <Image 
-                     source={item.src}    
-                     style={styles.imagesLogo}
-                    />
-                </View>
+                <TouchableOpacity onPress={handleClick}>
+                    <View style={styles.brandStyle}>
+                       <Image 
+                         source={item.src}    
+                         style={styles.imagesLogo}
+                        />
+                     </View>
+                </TouchableOpacity>
+                
                
              )}
            />
@@ -59,14 +66,14 @@ const styles = StyleSheet.create({
     brandText: {
         color: 'black',
         fontWeight: 'bold',
-        fontSize: 22,
+        fontSize: 20,
         padding: 8,
         marginLeft: 10,
         //backgroundColor: 'blue'
     },
     brandStyle: {
-        borderRadius: 20,
-        //backgroundColor: 'lightgrey',
+        borderRadius: 30,
+        backgroundColor: 'white',
         paddingLeft: 1,
         paddingRight: 1,
     }
