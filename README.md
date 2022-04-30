@@ -1,2 +1,2 @@
 # CarRental-App
-React native mobile app for car renting
+A simple React native mobile app ui for car renting
